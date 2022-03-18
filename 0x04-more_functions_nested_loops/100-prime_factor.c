@@ -1,4 +1,4 @@
-#include <stio.h>
+#include <stdio.h>
 
 /**
  * main - FInds and prints the largest prime
