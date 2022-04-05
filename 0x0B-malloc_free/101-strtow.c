@@ -44,7 +44,7 @@ char **strtow(char *str)
 		return (NULL);
 	str_dup = malloc(sizeof(char *) * (words + 1));
 	if (str_dup == NULL)
-		retrun (NULL);
+		return (NULL);
 	i = 0;
 
 	while (i < words && *str != '\0')
