@@ -24,6 +24,7 @@ char *argstostr(int ac, char **av)
 	}
 	/*
 	 * allocates memory for total number of chars and ending character
+	 * stores every character inside str array
 	 * with new line after each word
 	 */
 	str = malloc(sizeof(char) * size + 1);
@@ -36,7 +37,8 @@ char *argstostr(int ac, char **av)
 	for (arg = 0; arg < ac; arg++)
 	{
 		for (byte = 0; av[arg][byte]; byte++)
-			str[i++] = '\n';
+			str[i++] = av[arg][byte];
+		str[i++] = '\n';
 	}
 	/* assign ending NULL character to last char */
 	str[size] = '\0';
