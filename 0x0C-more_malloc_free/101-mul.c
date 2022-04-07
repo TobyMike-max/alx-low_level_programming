@@ -16,6 +16,7 @@ void add_nums(char *final_prod, char *next_prod, int next_len);
 int find_len(char *str)
 {
 	int len = 0;
+
 	while (*str++)
 		len++;
 	return (len);
@@ -181,36 +182,28 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 int main(int argc, *argv[])
 {
 	char *final_prod, *next_prod;
+
 	int size, i, digit, zeroes = 0;
 
-
 	if (argc != 3)
-	{
 		printf("Error\n");
 		exit(98);
-	}
-
 	if (*(argv[1]) == '0')
 		argv[1] = iterate_zeroes(argv[1]);
 	if (*(argv[2]) == '0')
 		argv[2] = iterate_zeroes(argv[2]);
 	if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
-	{
 		printf("0\n");
 		return (0);
-	}
-
 	size = find_len(argv[1]) + find_len(argv[2]);
 	final_prod = create_xarray(size + 1);
 	next_prod = create_xarray(size + 1);
-
 	for (i = find_len(argv[2]) - 1; i >= 0; i--)
 	{
 		digit = get_digit(*(argv[2] + i));
 		get_prod(next_prod, argv[1], digit, zeroes++);
 		add_nums(final_prod, next_prod, size - 1);
 	}
-
 	for (i = 0; final_prod[i]; i++)
 	{
 		if (final_prod[i] != 'x')
@@ -220,6 +213,5 @@ int main(int argc, *argv[])
 
 	free(next_prod);
 	free(final_prod);
-
 	return (0);
 }
