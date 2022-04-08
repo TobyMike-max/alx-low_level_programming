@@ -11,3 +11,9 @@ Table 1.
 | 5   | void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size); | 100-realloc.c |
 | 6   | mul | 101-mul.c |
 
+## 0. Trust no one
+Write a function that allocates memory using malloc.
+
+* Prototype: void *malloc_checked(unsigned int b);
+* Returns a pointer to the allocated memory
+* if malloc fails, the malloc_checked function should cause normal process termination with a status value of 98
