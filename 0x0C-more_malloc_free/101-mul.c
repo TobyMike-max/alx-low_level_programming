@@ -9,8 +9,8 @@
 void _print(char *str, int l)
 {
 	int i, j;
+
 	i = j = 0;
-	
 	while (i < l)
 	{
 		if (str[i] != '0')
@@ -30,7 +30,8 @@ void _print(char *str, int l)
  * @num: string to multiply
  * @num_index: last non NULL index of num
  * @dest: destination of multiplication
- * @dest_index: highest index to start addition
+8 * @dest_index: highest index to start addition
+ *
  * Return: pointer to dest, or NULL on failure
  */
 char *mul(char n, char *num, int num_index, char *dest, int dest_index)
@@ -87,6 +88,7 @@ int check_for_digits(char **av)
  * init - initializes a string
  * @str: sting to initialize
  * @l: length of strinf
+ *
  * Return: void
  */
 void init(char *str, int l)
@@ -143,6 +145,6 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 	}
-	_print(a, ln - 1);
-	return (0);
+_print(a, ln - 1);
+return (0);
 }
