@@ -5,8 +5,10 @@
  * a parameter on each element of an array.
  * @array: The array.
  * @size: The size of array.
- * @action: A pointer to the function to be executed.
+ * @action: A pointer to the function to be executed
+ * Return: void.
  */
+
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	size_t i;
