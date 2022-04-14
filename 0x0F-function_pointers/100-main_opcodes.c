@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	fir (i = 0; i < bytes; i++)
+	for (i = 0; i < bytes; i++)
 	{
 		opcode = *(unsigned char *)address;
 		printf("%.2x", opcode);
