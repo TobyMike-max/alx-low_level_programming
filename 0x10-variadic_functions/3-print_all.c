@@ -61,6 +61,7 @@ void print_string(va_list arg)
 	if (str == NULL)
 	{
 		printf("(nil)");
+	
 		return;
 	}
 	printf("%s", str);
@@ -77,8 +78,9 @@ void print_string(va_list arg)
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, j = 0;
+	int i = 0, j;
 	char *separator = "";
+	
 	printer_t funcs[] = {
 		{"c", print_char},
 		{"i", print_int},
