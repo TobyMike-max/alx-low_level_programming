@@ -14,7 +14,7 @@ int main(int __attribute__((unused)) argc, char *argv[])
 	char password[7], *codex;
 	int len = strlen(argv[1]), i, tmp;
 
-	codex = "A-CHRDw87lNS0E9B2TingpnMVys5Xzvt0GJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5Xzvt0GJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 
 	tmp = (len ^ 59) & 63;
 	password[0] = codex[tmp];
