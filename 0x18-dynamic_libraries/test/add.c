@@ -4,7 +4,7 @@
  *
  * Return: the result of adding two numbers together
  */
-int add(a, b)
+int add(int a, int b)
 {
 	return (a + b);
 }

@@ -4,7 +4,7 @@
  * 
  * Return: the result of subtracting two numbers together
  */
-int sub(a, b)
+int sub(int a, int b)
 {
 	return (a - b);
 }

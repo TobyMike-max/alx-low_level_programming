@@ -4,7 +4,7 @@
  *
  * Return: the result of dividing two numbers together
  */
-int div(a, b)
+int div(int a, int b)
 {
 	return (a / b);
 }

@@ -4,7 +4,7 @@
  *
  * Return: the remainder of the two numbers
  */
-int mod(a, b)
+int mod(int a, int b)
 {
 	return (a % b);
 }

@@ -4,7 +4,7 @@
  *
  * Return: the result of multiplying two numbers together
  */
-int mul(a, b)
+int mul(int a, int b)
 {
 	return (a * b);
 }
