@@ -6,17 +6,26 @@
  *
  * Return: Pointer to the newly created hash table address
  */
-
+f (*find_ray)->value
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *new;
+	hash_table_t *ht;
 
-	if (size <= 0)
+	if (size < 0)
 		return (NULL);
 
-	new = malloc(sizeof(hash_table_t) * size);
-
-	if (new == NULL)
+	ht = malloc(sizeof(hash_table_t));
+	if (ht == NULL)
 		return (NULL);
-	return (new);
+
+	ht->size = size;
+	ht->array = malloc(sizeof(hash_node_t *) * size);
+	if (ht->array == NULL)
+	{
+		free(ht);
+		return (NULL);
+	}
+	for (i = 0; i < size; i++)
+		ht->array[i] = NULL;
+	return (ht);
 }
