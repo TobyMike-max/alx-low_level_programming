@@ -1,10 +1,11 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_t - Creates memory for a new hash table type.
- * @size: The size of hash table to create.
+ * hash_table_create - Creates memory for a new hash table type.
+ * @size: The size of the array.
  *
- * Return: Pointer to the newly created hash table address
+ * Return: If an error occurs - NULL.
+ * Otherwise pointer to the newly created hash table table.
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
@@ -19,6 +20,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	ht->array = malloc(sizeof(hash_node_t *) * size);
 	if (ht->array == NULL)
 	{
+		free(ht);
 		return (NULL);
 	}
 
