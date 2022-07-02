@@ -5,7 +5,7 @@
  * @ht: single pointer to a hash table type.
  * @key: single pointer to key used for searching a value.
  *
- * Return: On failure - NULL
+ * Return: On failure, if the key can't be matched - NULL
  * Otherwise - value pointer to the associated element.
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
@@ -23,15 +23,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	hash_node = ht->array[index];
 
-	while (hash_node != NULL)
-	{
-		if (strcmp(hash_node->key, key) == 0)
-		{
-			if (hash_node->value != NULL)
-				return (hash_node->value);
-			continue;
-		}
+	while (hash_node && strcmp(hash_node->key, key) != 0)
 		hash_node = hash_node->next;
-	}
-	return (NULL);
+
+	return ((hash_node == NULL) ? NULL : hash_node->value);
 }
