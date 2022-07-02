@@ -25,8 +25,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	if (ht == NULL)
-		return (0);
 
 	for (i = index; ht->array[i]; i++)
 	{
