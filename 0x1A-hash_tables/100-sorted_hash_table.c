@@ -140,11 +140,10 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 		return (NULL);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	
 	hash_node = ht->array[index];
 	while (hash_node && strcmp(hash_node->key, key) != 0)
 		hash_node = hash_node->next;
-	
+
 	return ((hash_node == NULL) ? NULL : hash_node->value);
 }
 
@@ -161,7 +160,7 @@ void shash_table_print(const shash_table_t *ht)
 
 	current = ht->shead;
 	printf("{");
-	while(current)
+	while (current)
 	{
 		printf("'%s': '%s'", current->key, current->value);
 		current = current->snext;
@@ -184,7 +183,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 	current = ht->stail;
 	printf("{");
-	while(current)
+	while (current)
 	{
 		printf("'%s': '%s'", current->key, current->value);
 		current = current->sprev;
